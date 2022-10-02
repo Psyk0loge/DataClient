@@ -1,4 +1,5 @@
-#Speedtestscript with Data Upload
+#!</usr/bin/python3>
+#Link to the python interpreter when executing as bashscript on the Linux Container
 
 #imports for influxdb
 import influxdb_client
