@@ -5,7 +5,7 @@ import influxdb_client
 from influxdb_client.client.write_api import SYNCHRONOUS
 #Imports for speedtest
 import speedtest
-
+servers = []
 
 bucket = "15dcaded7cb11a82"
 org = "f3c403cbbf09a8f7"
@@ -25,7 +25,7 @@ threads = None
 #speedtest.Speedtest.
 
 #Measure Data:
-speed_test = speedtest.Speedtest()
+speed_test = speedtest.Speedtest(secure=True)
 
 def bytes_to_mb(bytes):
   KB = 1024 # One Kilobyte is 1024 bytes
@@ -34,7 +34,8 @@ def bytes_to_mb(bytes):
 
 
 #sprint(servers[0])
-#speed_test._secure = 1
+speed_test._secure = True
+speed_test.get_servers(servers)
 speed_test.get_best_server()
 download_speed =  speed_test.download(threads = threads)
 print("Your Download speed is", bytes_to_mb(download_speed), 'MByte/S') 
