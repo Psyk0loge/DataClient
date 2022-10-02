@@ -1,4 +1,4 @@
-#!</usr/bin/python3>
+#!/usr/bin/python3
 #Link to the python interpreter when executing as bashscript on the Linux Container
 
 #imports for influxdb
